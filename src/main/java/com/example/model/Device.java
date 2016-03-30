@@ -9,21 +9,37 @@ public class Device {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "deviceid")
     private long deviceId;
 
+    @Column(name = "token")
     private String token;
 
+    @Column(name = "devicetype")
     private String deviceType;
 
-    private String devicelang;
+    @Column(name = "devicelang")
+    private String deviceLang;
 
+    @Column(name = "regdate")
     private Date regDate;
 
+    @Column(name = "userid")
     private Long userId;
 
+    @Column(name = "devicetypedescription", columnDefinition = "TEXT")
     private String deviceTypeDescription;
 
+    @Column(name = "lastview")
     private Date lastView;
+
+    public long getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(long deviceId) {
+        this.deviceId = deviceId;
+    }
 
     public String getToken() {
         return token;
@@ -41,12 +57,12 @@ public class Device {
         this.deviceType = deviceType;
     }
 
-    public String getDevicelang() {
-        return devicelang;
+    public String getDeviceLang() {
+        return deviceLang;
     }
 
-    public void setDevicelang(String devicelang) {
-        this.devicelang = devicelang;
+    public void setDeviceLang(String deviceLang) {
+        this.deviceLang = deviceLang;
     }
 
     public Date getRegDate() {
